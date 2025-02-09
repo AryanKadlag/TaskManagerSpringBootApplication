@@ -18,6 +18,8 @@ public class TasksService {
         task.setDescription(description);
         task.setCompleted(false);
         task.setDueDate(dueDate);
+
+        tasksRepository.findByDueDate(dueDate);
         return tasksRepository.save(task);
 
     }

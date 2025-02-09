@@ -1,14 +1,10 @@
 package com.scl.taskmgrspring.tasks;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.Date;
 
@@ -27,6 +23,7 @@ public class TasksEntity {
     private String title;
     private String description;
     private Boolean completed;
+    @Column(unique = true)
     private Date dueDate;
 
 }
